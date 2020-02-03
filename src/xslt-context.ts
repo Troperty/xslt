@@ -1,4 +1,5 @@
 import { convertValue, XPathEvaluator } from 'xpath-ts';
+import { xsltFunctionResolver } from './xslt-function-resolver';
 
 export type Variable = string | number | boolean | Node | Node[];
 
@@ -80,6 +81,7 @@ export class XSLTContext {
 
   eval(select: string, type: number = 0) {
     const evaluator = new XPathEvaluator({
+      fr: xsltFunctionResolver,
       vr: {
         getVariable: (ln) => {
           const val = this.getVariable(ln);
