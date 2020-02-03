@@ -9,7 +9,7 @@ import { executeTests as xsltTests } from './xslt-test';
 
 describe('xmldom', async () => {
   before(() => {
-    install(new DOMParserImpl(), new XMLSerializerImpl(), new DOMImplementationImpl());
+    install(new DOMParserImpl(), new XMLSerializerImpl(), new DOMImplementationImpl() as DOMImplementation);
   });
 
   escapeTests();
