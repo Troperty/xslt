@@ -1,6 +1,6 @@
 {
-  "name": "xslt-ts",
-  "version": "1.1.8",
+  "name": "@svensktravsport/xslt-ts",
+  "version": "1.0.0",
   "description": "XSL Transform 1.0 implemention for browser and Node.js environment.",
   "author": {
     "name": "Johannes Wilm",
@@ -13,6 +13,10 @@
     "dom"
   ],
   "contributors": [
+    {
+      "name": "Daniel Pedersen",
+      "url": "https://github.com/daniel-pedersen"
+    },
     {
       "name": "Matus Zamborsky",
       "email": "zamborsky@gmail.com",
@@ -49,6 +53,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/backslash47/xslt"
+    "url": "git://github.com/Troperty/xslt"
   }
 }
