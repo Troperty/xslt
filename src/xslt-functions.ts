@@ -1,5 +1,6 @@
 import fs from 'fs';
-import { XPathContext, Expression, XNodeSet } from 'xpath-ts';
+import { XPathContext, Expression, XNodeSet, XString } from 'xpath-ts';
+import moment from 'moment-timezone';
 import { getParser } from './install';
 
 export class XsltFunctions {
@@ -16,5 +17,14 @@ export class XsltFunctions {
     const nodeset = new XNodeSet();
     nodeset.add(document);
     return nodeset;
+  }
+
+  static formatUtc(c: XPathContext, ...args: Expression[]) {
+    if (args.length < 2) {
+      throw Error('invalid number of arguments');
+    }
+    const value = args[0].evaluate(c).stringValue;
+    const timezone = args[1].evaluate(c).stringValue;
+    return new XString(moment.tz(value, timezone).utc().format());
   }
 }
