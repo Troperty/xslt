@@ -531,6 +531,8 @@ function xsltCopyOf(dst: Node, src: Node, dstDocument: Document) {
         xsltCopyOf(node, src.childNodes[i], dstDocument);
       }
     }
+  } else {
+    xsltCopy(dst, src, dstDocument);
   }
 }
 
